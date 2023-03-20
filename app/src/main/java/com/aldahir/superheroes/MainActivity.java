@@ -10,10 +10,7 @@ import com.aldahir.superheroes.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String SUPER_HERO_NAME = "super_hero_name";
-    public static final String ALTER_EGO_NAME = "alter_ego_name";
-    public static final String BIO_DESCRIPTION = "bio_description";
-    public static final String RATING = "rating";
+    public static final String SUPER_HERO_KEY = "super_hero";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +34,11 @@ public class MainActivity extends AppCompatActivity {
     {
         //un intent nos ayuda a enviar información de un activity a otro
         //ejemplo de un explicit intent
-        System.out.println("Datos obtenidos");
-        System.out.println(superHeroName);
-        System.out.println(alterEgoName);
-        System.out.println(bioDescription);
-        System.out.println(rating);
+        SuperHero superHero = new SuperHero(superHeroName, alterEgoName, bioDescription, rating);
         Intent intent = new Intent(this, DetailAcitivity.class);
-        intent.putExtra(SUPER_HERO_NAME, superHeroName );
-        intent.putExtra(ALTER_EGO_NAME, alterEgoName );
-        intent.putExtra(BIO_DESCRIPTION, bioDescription );
-        intent.putExtra(RATING, rating );
+        //para poder mandar un objeto en un intent debe implementar parcelables
+        intent.putExtra(SUPER_HERO_KEY, superHero);
+
         startActivity(intent);
     }
 }

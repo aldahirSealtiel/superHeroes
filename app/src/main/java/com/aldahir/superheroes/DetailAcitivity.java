@@ -20,13 +20,11 @@ public class DetailAcitivity extends AppCompatActivity {
         Intent mainActivityIntent = getIntent();
 
         Bundle extras = mainActivityIntent.getExtras();
-        String superHeroName = extras.getString(MainActivity.SUPER_HERO_NAME);
-        String alterEgoName = extras.getString(MainActivity.ALTER_EGO_NAME);
-        String bioDesciption = extras.getString(MainActivity.BIO_DESCRIPTION);
-        float rating = extras.getFloat(MainActivity.RATING);
-        bindingDetail.heroName.setText(superHeroName);
-        bindingDetail.alterEgoName.setText(alterEgoName);
-        bindingDetail.bioDescriptionText.setText(bioDesciption);
-        bindingDetail.ratingBar.setRating(rating);
+        SuperHero superHero = extras.getParcelable(MainActivity.SUPER_HERO_KEY);
+
+        bindingDetail.heroName.setText(superHero.getSuperHeroName());
+        bindingDetail.alterEgoName.setText(superHero.getAlterEgoName());
+        bindingDetail.bioDescriptionText.setText(superHero.getBioDescription());
+        bindingDetail.ratingBar.setRating(superHero.getRating());
     }
 }
