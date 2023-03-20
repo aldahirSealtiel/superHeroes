@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             String alterEgoName = binding.alterNameEdit.getText().toString();
             String bioDescription = binding.bioEdit.getText().toString();
             float rating = binding.powerRating.getRating();
-            System.out.println("datos 2");
+            System.out.println("datos 4");
             System.out.println(superHeroName);
             openDetailActivity(superHeroName,alterEgoName, bioDescription, rating);
         });
