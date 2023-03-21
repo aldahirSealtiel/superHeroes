@@ -19,6 +19,7 @@ import com.aldahir.superheroes.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     public static final String SUPER_HERO_KEY = "super_hero";
+    //se creo esta variable para pasar la imagen a otra activity
     public static final String BITMAP_KEY = "bitmap";
     public Bitmap imgBitmap = null;
     @Override
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         */
+        //Se creo para tomar fotos y que se colocaran en el image View
         ActivityResultLauncher<Intent> camaraLauncher = registerForActivityResult(new
                         ActivityResultContracts.StartActivityForResult(),
                 result -> {
